@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PhysicianBooking.Domain\PhysicianBooking.Domain.csproj" />
+    <ProjectReference Include="..\PhysicianBooking.Services\PhysicianBooking.Services.csproj" />
+  </ItemGroup>
+
+</Project>

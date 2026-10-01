@@ -1,0 +1,408 @@
+.frm-page-row {
+	min-height: calc(100vh - 210px); 
+}
+
+.frm-card {
+	border-radius: $border-radius-xxl;
+	border: 1px solid $gray-200;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		min-height: 0;
+	}
+}
+
+// ---------- Header ----------
+.frm-header {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 22px 28px;
+	border-bottom: 1px solid $gray-200;
+	background: $gray-100;
+}
+
+.frm-header__icon {
+	width: 44px;
+	height: 44px;
+	border-radius: $border-radius-lg;
+	background: rgba($primary, 0.1);
+	color: $primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	flex-shrink: 0;
+}
+
+.frm-header__title {
+	font-size: 17px;
+	font-weight: 600;
+	color: $gray-900;
+	margin-bottom: 2px;
+}
+
+.frm-header__subtitle {
+	font-size: 13px;
+	color: $gray-600;
+	margin-bottom: 0;
+}
+
+// ---------- Body / sections ----------
+.frm-body {
+	padding: 28px;
+	flex: 1;
+	overflow-y: auto;
+}
+
+.frm-section-title {
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	color: $gray-500;
+	margin-bottom: 18px;
+
+	&:not(:first-child) {
+		margin-top: 8px;
+		padding-top: 24px;
+		border-top: 1px dashed $gray-200;
+	}
+}
+
+// ---------- Field group ----------
+.frm-group {
+	margin-bottom: 22px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.frm-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13.5px;
+	font-weight: 500;
+	color: $gray-700;
+	margin-bottom: 8px;
+
+	.required {
+		color: $danger;
+	}
+}
+
+.frm-hint {
+	font-size: 12.5px;
+	color: $gray-500;
+	margin-top: 6px;
+}
+
+
+// ---------- Inputs ----------
+.frm-select {
+	min-height: 50px;
+}
+
+.frm-control,
+select.frm-control,
+textarea.frm-control {
+	width: 100%;
+	border: 1px solid $gray-200;
+	border-radius: $border-radius-lg;
+	padding: 11px 14px;
+	font-size: 14px;
+	color: $gray-900;
+	background: $white;
+	transition: border-color .15s ease, box-shadow .15s ease;
+
+	&::placeholder {
+		color: $gray-500;
+	}
+
+	&:focus {
+		outline: none;
+		border-color: $primary;
+		box-shadow: 0 0 0 3px rgba($primary, 0.12);
+	}
+
+	&.is-invalid {
+		border-color: $danger;
+
+		&:focus {
+			box-shadow: 0 0 0 3px rgba($danger, 0.12);
+		}
+	}
+}
+
+textarea.frm-control {
+	resize: vertical;
+	min-height: 110px;
+	line-height: 1.5;
+}
+
+.frm-textarea-wrap {
+	position: relative;
+}
+
+.frm-char-count {
+	position: absolute;
+	bottom: 10px;
+	right: 14px;
+	font-size: 11.5px;
+	color: $gray-500;
+	background: $white;
+	padding: 0 2px;
+	pointer-events: none;
+}
+
+// ---------- Select chevron (native select styled) ----------
+select.frm-control {
+	appearance: none;
+	-webkit-appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236c757d' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 14px center;
+	padding-right: 36px;
+}
+
+// ---------- Validation message ----------
+.frm-error {
+	display: block;
+	font-size: 12.5px;
+	color: $danger;
+	margin-top: 6px;
+}
+
+// ---------- Footer / actions ----------
+.frm-footer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+	padding: 18px 28px;
+	background: $gray-100;
+	border-top: 1px solid $gray-200;
+	flex-shrink: 0; 
+}
+
+.frm-btn {
+	border-radius: $border-radius-lg;
+	padding: 10px 22px;
+	font-size: 14px;
+	font-weight: 500;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	border: 1px solid transparent;
+	transition: all .15s ease;
+}
+
+.frm-btn--save {
+	background: $primary;
+	border-color: $primary;
+	color: $white;
+
+	&:hover {
+		background: darken($primary, 8%);
+		border-color: darken($primary, 8%);
+		color: $white;
+	}
+}
+
+.frm-btn--cancel {
+	background: $white;
+	border-color: $gray-200;
+	color: $gray-700;
+
+	&:hover {
+		background: $gray-100;
+	}
+}
+
+// ---------- Story-style image upload card ----------
+.story-wrapper {
+	border: 1px solid #cccc;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	overflow:hidden;
+	background: $white;
+	box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+	border-radius: $border-radius-lg;
+}
+
+.story-card {
+	border:1px solid red;
+	position: relative;
+	width: 160px;
+	height: 140px;
+	background: $gray-100;
+	border: 1px solid $gray-200;
+	cursor: pointer;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.placeholder-icon {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $gray-500;
+		font-size: 28px;
+	}
+}
+
+.story-add-btn {
+	position: absolute;
+	left: 50%;
+	bottom: -18px;
+	transform: translateX(-50%);
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: $primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid $white;
+	color: $white;
+	font-size: 18px;
+	font-weight: bold;
+	z-index: 2;
+}
+
+.story-remove-btn {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.55);
+	color: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 2;
+	font-size: 14px;
+}
+
+.story-label {
+	text-align: center;
+	font-size: 13px;
+	font-weight: 600;
+	color: $gray-900;
+	margin: 22px 0 0;
+	padding-bottom:30px;
+}
+
+
+
+// ---------- Large centered dropzone with clear image preview ----------
+.dz-big {
+	position: relative;
+	border: 1.5px dashed $gray-300;
+	border-radius: $border-radius-xxl;
+	padding: 24px;
+	text-align: center;
+	cursor: pointer;
+	background: $gray-100;
+	transition: border-color .15s ease, background .15s ease;
+	min-height: 220px;
+	max-width:800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&:hover,
+	&.drag-over {
+		border-color: $primary;
+		background: rgba($primary, 0.04);
+	}
+
+	&.has-image {
+		padding: 12px;
+		border-style: solid;
+	}
+}
+
+.dz-big-remove {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: $white;
+	border: 1px solid $gray-200;
+	color: $gray-600;
+	z-index: 2;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+	&:hover {
+		background: rgba($danger, 0.08);
+		border-color: $danger;
+		color: $danger;
+	}
+}
+
+.dz-big-icon-wrap {
+	width: 64px;
+	height: 64px;
+	margin: 0 auto 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dz-big-icon {
+	font-size: 40px;
+	color: $primary;
+}
+
+.dz-big-preview {
+	width: 100%;
+	max-height: 320px;
+	border-radius: $border-radius-lg;
+	object-fit: contain;
+	margin: 0 0 12px;
+	display: block;
+	background: $white;
+}
+
+.dz-big-text {
+	font-size: 14px;
+	color: $gray-900;
+	margin-bottom: 4px;
+}
+
+.dz-big-link {
+	color: $primary;
+	font-weight: 500;
+}
+
+.dz-big-sub {
+	font-size: 12px;
+	color: $gray-500;
+	margin-bottom: 0;
+}

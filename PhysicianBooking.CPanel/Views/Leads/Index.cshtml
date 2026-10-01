@@ -1,0 +1,355 @@
+﻿@model PagedResult<PhysicianBooking.Domain.Modal.LeadsModal>
+@using Microsoft.AspNetCore.Http
+@using PhysicianBooking.Domain
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Leads List";
+    // var permissions = PermissionHelper.GetPagePermission(HttpContextAccessor.HttpContext.Session, "Services");
+}
+<style>
+    .search-flex-container {
+        display: flex;
+        align-items: center;
+        gap: 12px; /* Physical space between all controls */
+        width: 100%;
+        flex-wrap: nowrap; /* Forces everything to stay on one line */
+        background: #fdfdfd;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    /* Common style for all inputs */
+    .search-control {
+        height: 40px;
+        padding: 0 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    /* Specific widths */
+    #SearchInput {
+        flex: 2;
+        min-width: 150px;
+    }
+
+    input[type="date"] {
+        flex: 1;
+        cursor: pointer;
+    }
+
+    /* Icon Block */
+    .icon-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        color: #6c757d;
+    }
+
+    /* Date group to keep Label + Input together as one unit */
+    .date-group {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+    }
+
+        .date-group label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #495057;
+            margin: 0;
+        }
+
+    /* Buttons */
+    .btn-control-clear, .btn-control-search {
+        height: 40px;
+        padding: 0 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .btn-control-clear {
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        color: #6c757d;
+    }
+
+        .btn-control-clear:hover {
+            background-color: #fff5f5;
+            border-color: #f5c6cb;
+            color: #dc3545;
+        }
+
+    .btn-control-search {
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        color: white;
+    }
+
+        .btn-control-search:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<div class="row tbl-page-row">
+    <div class="col-12">
+        <div class="card tbl-card">
+            <div class="card-body p-4">
+                <div class="row">
+                    <!-- Bar Chart -->
+                    <div class="col-md-6">
+                        <div style="height: 400px; width: 100%; position: relative; border: 1px solid #eee;">
+                            <canvas id="idChart" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Pie Chart -->
+                    <div class="col-md-6">
+                        <div style="height: 400px; width: 100%; position: relative; border: 1px solid #eee;">
+                            <canvas id="specialtyChart" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="tbl-toolbar">
+
+                    <form id="SearchForm" action="Index" method="GET">
+                        <div class="search-flex-container">
+                            <!-- 1. Search Icon -->
+                            <div class="icon-block">
+                                <i class="ti-search"></i>
+                            </div>
+
+                            <!-- 2. Search Textbox -->
+                            <input type="text" id="SearchInput" name="search" class="search-control"
+                                   value="@ViewBag.SearchText" placeholder="Search business..." />
+
+                            <!-- 3. From Date -->
+                            <div class="date-group">
+                                <label>From:</label>
+                                <input type="date" id="FromDate" name="fromDate" class="search-control" value="@ViewBag.FromDate" />
+                            </div>
+
+                            <!-- 4. To Date -->
+                            <div class="date-group">
+                                <label>To:</label>
+                                <input type="date" id="ToDate" name="toDate" class="search-control" value="@ViewBag.ToDate" />
+                            </div>
+
+                            <!-- 5. Clear Button -->
+                            <button type="button" id="btnClear" class="btn-control-clear">
+                                <i class="ti-close"></i> Clear
+                            </button>
+
+                            <!-- 6. Search Button -->
+                            <button type="submit" class="btn-control-search">
+                                Search
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="tbl-responsive table-responsive">
+                    <table class="table tbl mb-0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Business</th>
+                                <th>Specialty</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Data.Any())
+                            {
+                                foreach (var item in Model.Data)
+                                {
+                                    <tr>
+                                        <td class="tbl-id">#@item.Id</td>
+                                        <td class="tbl-cell-ellipsis" title="@item.Place">@item.Place</td>
+                                        <td class="tbl-cell-ellipsis" title="@item.Place">@item.Specialty</td>
+                                        <td class="tbl-cell-ellipsis" title="@item.CreatedDate">@item.CreatedDate</td>
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center py-4 text-muted">No records found.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                @if (Model.Data.Any())
+                {
+                    if (Model.Data.Count() > 0)
+                    {
+                        <partial name="_Pagination" model="new PhysicianBooking.Domain.ViewModel.BaseModel { CurrentPage = Model.CurrentPage, TotalCount = Model.TotalRecords, SearchTerm = Model.SearchTerm }" />
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@* <script>
+    const searchInput = document.getElementById('SearchInput');
+    const searchForm = document.getElementById('SearchForm');
+
+    searchInput.addEventListener('input', function() {
+        searchForm.submit();
+    });
+</script> *@
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+              document.addEventListener("DOMContentLoaded", function () {
+            const searchForm = document.getElementById("SearchForm");
+            const searchInput = document.getElementById("SearchInput");
+            const fromDate = document.getElementById("FromDate");
+            const toDate = document.getElementById("ToDate");
+            const clearBtn = document.getElementById("btnClear");
+
+            clearBtn.addEventListener("click", function () {
+                // 1. Clear all input values
+                searchInput.value = "";
+                fromDate.value = "";
+                toDate.value = "";
+
+                // 2. Submit form to reload all content (clean state)
+                searchForm.submit();
+            });
+        });
+
+        // 1. Prepare data from C# Model to JavaScript
+        const businessData = JSON.parse('@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AllData))');
+
+                // 1. Group the data by Business Name (Place) and count them
+        const businessLeadCounts = businessData.reduce((acc, item) => {
+            // Note: Use 'Place' or 'place' based on your JSON casing
+            const businessName = item.place || item.Place || "Unknown Business";
+
+            acc[businessName] = (acc[businessName] || 0) + 1;
+            return acc;
+        }, {});
+
+        // 2. Extract labels (Business Names) and data (Lead Counts)
+        const barLabels = Object.keys(businessLeadCounts);
+        const barDataValues = Object.values(businessLeadCounts);
+
+        // 3. --- BAR CHART (Total Leads per Business) ---
+        const ctx1 = document.getElementById('idChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: barLabels, // The names of the dental clinics
+                datasets: [{
+                    label: 'Total Leads',
+                    data: barDataValues, // The number of leads for each clinic
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Prevents 0px height issue
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Leads Count by Business'
+                    },
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { stepSize: 1 }, // Ensure only whole numbers show
+                        title: {
+                            display: true,
+                            text: 'Number of Leads'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Business Name'
+                        }
+                    }
+                }
+            }
+        });
+
+                // 1. Group and Count Specialties
+        const specialtyCounts = businessData.reduce((acc, item) => {
+            // Handle both 'specialty' and 'Specialty' (C# casing)
+            const s = item.specialty || item.Specialty || "Unknown";
+
+            // Increment the count for this specialty
+            acc[s] = (acc[s] || 0) + 1;
+            return acc;
+        }, {});
+
+        // 2. Extract Labels (Specialty Names) and Data (Counts)
+        const specialtyLabels = Object.keys(specialtyCounts); // e.g., ["dentist", "orthodontist"]
+        const specialtyValues = Object.values(specialtyCounts); // e.g., [5, 2]
+
+        // --- PIE CHART (Count by Specialty) ---
+        // Note: In your current data, all are 'dentist', so this will show 100% dentist.
+              // 3. Create the Pie Chart
+        const ctx2 = document.getElementById('specialtyChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: specialtyLabels, // Dynamic labels
+                datasets: [{
+                    label: 'No of Leads',
+                    data: specialtyValues, // Dynamic counts
+                    backgroundColor: [
+                        '#FF6384', // Red
+                        '#36A2EB', // Blue
+                        '#FFCE56', // Yellow
+                        '#4BC0C0', // Teal
+                        '#9966FF', // Purple
+                        '#FF9F40'  // Orange
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Helps with the 0px height issue
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Business Specialty Breakdown'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+}

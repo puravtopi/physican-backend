@@ -1,0 +1,628 @@
+@import "../../variable";
+
+/*******************
+ sales chart
+*******************/
+.sales {
+    position: relative;
+    height: 270px;
+    -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .2));
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .2));
+
+    .ct-series-a .ct-area {
+        fill-opacity: 0.1;
+        fill: url(#gradient);
+    }
+
+    .ct-series-a .ct-line, .ct-series-a .ct-point {
+        stroke: $info;
+        stroke-width: 3px;
+    }
+
+    .ct-series-b .ct-area {
+        fill: #c9d9ea;
+        fill-opacity: 0.0;
+    }
+
+    .ct-series-b .ct-line, .ct-series-b .ct-point {
+        stroke: #c9d9ea;
+        stroke-width: 3px;
+    }
+
+    .ct-series-a .ct-point, .ct-series-b .ct-point {
+        stroke-width: 5px;
+    }
+
+    .ct-grid {
+        stroke-width: 0.5px;
+    }
+}
+
+.stat-card {
+    background: $white;
+    border: 1px solid $gray-200;
+    border-radius: $border-radius-lg;
+    height: 100%;
+    padding: 16px 18px;
+
+    .stat-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.amber {
+            background: rgba($primary, 0.1);
+            color: $amber-deep;
+        }
+
+        &.teal {
+            background: $teal-tint;
+            color: $teal;
+        }
+
+        &.rose {
+            background: $rose-tint;
+            color: $rose;
+        }
+
+        &.ink {
+            background: #eeeff4;
+            color: $ink;
+        }
+    }
+
+    .stat-trend {
+        font-size: 11.5px;
+        font-weight: 600;
+
+        &.up {
+            color: $teal;
+        }
+
+        &.down {
+            color: $rose;
+        }
+    }
+
+    .stat-label {
+        color: $text-muted;
+        font-size: 12.5px;
+        margin-bottom: 4px;
+    }
+
+    .stat-value {
+        font-size: 32px;
+        font-weight: 600;
+        color: $black;
+        letter-spacing: -0.5px;
+    }
+
+    .ticks {
+        display: flex;
+        gap: 3px;
+        margin-top: 10px;
+
+        span {
+            flex: 1;
+            height: 4px;
+            border-radius: 1px;
+            background: $border;
+
+            &.fill {
+                background: $primary;
+            }
+        }
+    }
+}
+
+/* ---------- Stat Cards ---------- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 16px;
+
+    .stat-card {
+        padding: 16px 18px;
+        background: $surface;
+        border: 1px solid $border;
+        border-radius: $radius;
+
+        .stat-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .stat-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+
+            &.amber {
+                background: $amber-tint;
+                color: $amber-deep;
+            }
+
+            &.teal {
+                background: $teal-tint;
+                color: $teal;
+            }
+
+            &.rose {
+                background: $rose-tint;
+                color: $rose;
+            }
+
+            &.ink {
+                background: #eeeff4;
+                color: $ink;
+            }
+        }
+
+        .stat-trend {
+            font-size: 11.5px;
+            font-weight: 600;
+
+            &.up {
+                color: $teal;
+            }
+
+            &.down {
+                color: $rose;
+            }
+        }
+
+        .stat-label {
+            margin-bottom: 4px;
+            font-size: 12.5px;
+            color: $text-muted;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .ticks {
+            display: flex;
+            gap: 3px;
+            margin-top: 10px;
+
+            span {
+                flex: 1;
+                height: 4px;
+                background: $border;
+                border-radius: 1px;
+
+                &.fill {
+                    background: $primary;
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Layout ---------- */
+
+
+
+/* ---------- Card ---------- */
+
+.dashboard-card {
+    padding: 18px 20px;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius;
+    height: 100%;
+
+    .dashboard-card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        h3 {
+            font-size: 14.5px;
+            font-weight: 600;
+            color:$black;
+        }
+
+        p {
+            margin: 2px 0 0;
+            font-size: 12px;
+            color: $text-muted;
+        }
+    }
+
+    .pill-select {
+        padding: 5px 10px;
+        font-size: 12px;
+        color: $text-muted;
+        background: $surface;
+        border: 1px solid $border;
+        border-radius: 7px;
+    }
+    /* ---------- Chart ---------- */
+
+    .chart-legend {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 12px;
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: $text-muted;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+    }
+    /* ---------- Needs Attention ---------- */
+
+    .attn-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 11px 0;
+        border-bottom: 1px solid $border;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .attn-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+
+    .attn-title {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .attn-sub {
+        margin-top: 1px;
+        font-size: 12px;
+        color: $text-muted;
+    }
+
+    .attn-count {
+        margin-left: auto;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .attn-go {
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 600;
+        color: $white;
+        text-decoration: none;
+        white-space: nowrap;
+        background: $primary;
+        border: 1px solid $amber-tint;
+        border-radius: 7px;
+    }
+}
+
+/* ---------- Tables ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        padding: 0 0 10px;
+        text-align: left;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        color: $text-faint;
+        border-bottom: 1px solid $border;
+    }
+
+    td {
+        padding: 11px 0;
+        font-size: 13px;
+        vertical-align: middle;
+        border-bottom: 1px solid $border;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    .status {
+        padding: 3px 9px;
+        font-size: 11.5px;
+        font-weight: 600;
+        border-radius: 20px;
+
+        &.published {
+            background: $teal-tint;
+            color: $teal;
+        }
+
+        &.draft {
+            background: $amber-tint;
+            color: $amber-deep;
+        }
+    }
+}
+
+/* ---------- Comments ---------- */
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.comment-time {
+    font-size: 11.5px;
+    color: $text-faint;
+}
+
+.comment-quote {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: $text;
+}
+
+.dash-page-row {
+    padding: 4px 4px 24px;
+}
+
+.dash-welcome h3 {
+    font-size:20px;
+    font-weight: 600;
+    color: $gray-900;
+}
+
+.dash-welcome p {
+    font-size: 13px;
+}
+
+.dot-amber {
+    background: $amber;
+}
+
+.dot-teal {
+    background: $teal;
+}
+
+.dot-rose {
+    background: $rose;
+}
+
+/* Rose */
+.attn-rose-tint {
+    background: $rose-tint;
+    color: $rose;
+}
+
+.attn-rose {
+    color: $rose;
+}
+
+/* Amber */
+.attn-amber-tint {
+    background: $amber-tint;
+    color: $amber-deep;
+}
+
+.attn-amber-deep {
+    color: $amber-deep;
+}
+
+/* Teal */
+.attn-teal-tint {
+    background: $teal-tint;
+    color: $teal;
+}
+
+.attn-teal {
+    color: $teal;
+}
+
+/* Ink */
+.attn-ink {
+    background: #EEEFF4;
+    color: $ink;
+}
+
+
+// ---------- Stat cards ----------
+.dash-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: $white;
+    border: 1px solid $gray-200;
+    border-radius: $border-radius-lg;
+    padding: 18px 20px;
+    height: 100%;
+}
+
+.dash-stat-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: $border-radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    color: $white;
+
+    &--blue {
+        background: #4a6fb5;
+    }
+
+    &--green {
+        background: #2fa974;
+    }
+
+    &--orange {
+        background: #e8964a;
+    }
+
+    &--purple {
+        background: #8b6fd6;
+    }
+
+    &--teal {
+        background: #2ba8ab;
+    }
+
+    &--red {
+        background: $danger;
+    }
+}
+
+.dash-stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.dash-stat-label {
+    font-size: 13px;
+    color: $gray-500;
+    margin-bottom: 0;
+}
+
+// ---------- Activity list ----------
+.dash-activity-card .frm-body {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.dash-activity-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dash-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed $gray-200;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.dash-activity-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba($primary, 0.08);
+    color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.dash-activity-text {
+    font-size: 13.5px;
+    color: $gray-900;
+    margin-bottom: 2px;
+}
+
+.dash-activity-time {
+    font-size: 12px;
+    color: $gray-500;
+    margin-bottom: 0;
+}
+
+// ---------- Quick actions ----------
+.dash-quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.dash-quick-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 12px;
+    border: 1px solid $gray-200;
+    border-radius: $border-radius-lg;
+    color: $gray-700;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all .15s ease;
+
+    i {
+        font-size: 22px;
+        color: $primary;
+    }
+
+    &:hover {
+        background: rgba($primary, 0.05);
+        border-color: $primary;
+        color: $primary;
+
+        i {
+            color: $primary;
+        }
+    }
+}
+
+@media(max-width:480px) {
+    .dash-welcome h3 {
+        font-size: 17px;
+        
+    }
+
+    .dash-welcome p {
+        font-size: 12px;
+    }
+}

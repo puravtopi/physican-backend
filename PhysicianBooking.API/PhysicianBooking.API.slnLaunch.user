@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "PhysicianBooking.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\PhysicianBooking.CPanel\\PhysicianBooking.CPanel.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

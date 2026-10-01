@@ -1,0 +1,16 @@
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.CPanel.exe
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\appsettings.Development.json
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\appsettings.json
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.CPanel.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.CPanel.deps.json
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.CPanel.runtimeconfig.json
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.CPanel.pdb
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\Dapper.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Primitives.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\Newtonsoft.Json.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\Npgsql.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.Domain.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.Services.dll
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.Domain.pdb
+E:\Physician Booking\Project\PhysicianBooking.CPanel\obj\Release\net9.0\PubTmp\Out\PhysicianBooking.Services.pdb

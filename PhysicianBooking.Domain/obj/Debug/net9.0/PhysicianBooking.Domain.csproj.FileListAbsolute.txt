@@ -1,0 +1,11 @@
+E:\Physician Booking\Project\PhysicianBooking.Domain\bin\Debug\net9.0\PhysicianBooking.Domain.deps.json
+E:\Physician Booking\Project\PhysicianBooking.Domain\bin\Debug\net9.0\PhysicianBooking.Domain.dll
+E:\Physician Booking\Project\PhysicianBooking.Domain\bin\Debug\net9.0\PhysicianBooking.Domain.pdb
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\PhysicianBooking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\PhysicianBooking.Domain.AssemblyInfoInputs.cache
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\PhysicianBooking.Domain.AssemblyInfo.cs
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\PhysicianBooking.Domain.csproj.CoreCompileInputs.cache
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\PhysicianBooking.Domain.dll
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\refint\PhysicianBooking.Domain.dll
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\PhysicianBooking.Domain.pdb
+E:\Physician Booking\Project\PhysicianBooking.Domain\obj\Debug\net9.0\ref\PhysicianBooking.Domain.dll

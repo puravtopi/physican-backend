@@ -1,0 +1,296 @@
+// Custom Variables
+/*Theme Colors*/
+
+$themecolor: #08428c;
+$themecolor-dark: #028ee1;
+$themecolor-alt: #26c6da;
+$theme-light:#fff;
+$theme-dark:#212529;
+$skin1:#2962FF;
+$skin2:#fe5419;
+$skin3:#00b0ff;
+$skin4:#6659f7;
+$skin5:#233242;
+$skin6:#fff;
+/*Topbar Colors*/
+
+$topbar:$theme-light;
+$topbar-height:64px;
+$topbar-navlink-padding:0px 15px;
+$topbar-navlink-font-size:0.875rem;
+$topbar-navlink-height:64px;
+$topbar-navbrand-padding:0 10px 0 10px;
+/*Sidebar Colors*/
+
+$sidebar: $theme-light;
+$sidebar-alt:#e8eff0;
+$sidebar-text: #fff;
+$sidebar-icons: #fff;
+$sidebar-text-dark: #2b2b2b;
+$sidebar-icons-dark: #4F5467;
+$sidebar-width-full:250px;
+$sidebar-width-iconbar:180px;
+$sidebar-width-mini:65px;
+/*Boxed layout width*/
+
+$boxed-width:1200px;
+/*Shadow*/
+
+$shadow:1px 0px 20px rgba(0, 0, 0, 0.08);
+/*transitions*/
+
+$transitions:0.2s ease-in;
+/*Dark transparent bg*/
+
+$transparent-dark-bg:rgba(0, 0, 0, 0.03); 
+$lft:left;
+$rgt:right;
+$card-alt:#e4e9ef;
+%square {
+    border-radius: 0px
+}
+
+%rotate45 {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+}
+
+/*******************************/
+
+// Bootstrap overrides
+/*******************************/
+
+/**
+ * Table Of Content
+ *
+ *  1. Color system
+ *  2. Options
+ *  3. Body
+ *  4. Typography
+ *  5. Breadcrumbs
+ *  6. Cards
+ *  7. Dropdowns
+ *  8. Buttons
+ *  9. Typography
+ *  10. Progress bars
+ *  11. Tables
+ *  12. Forms
+ *  14. Component
+ */
+
+//
+// Color system
+//
+$white: #fff !default;
+$gray-100: #f6f8f9 !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #afb5c1 !default;
+$gray-600: #6c757d !default;
+$gray-700: #4F5467 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #0b0b0d !default;
+$blue: #0b4fd9 !default;
+$indigo: #6610f2 !default;
+$purple: #8b5edd !default;
+$pink: #e83e8c !default;
+$red: #fa5838 !default;
+$orange: #fb8c00 !default;
+$yellow: #ffbc34 !default;
+$green: #5ac146 !default;
+$teal: #20c997 !default;
+$cyan: #4fc3f7 !default;
+$primary: $blue !default;
+$text-muted: $gray-500 !default;
+$colors: ( blue: $blue, indigo: $indigo, purple: $purple, pink: $pink, red: $red, orange: $orange, yellow: $yellow, green: $green, teal: $teal, cyan: $cyan, white: $white, gray: $gray-600, gray-dark: $gray-800);
+$primary: $blue !default;
+$secondary: $black !default;
+$success: $green !default;
+$info: $blue !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+$cyan: $cyan !default;
+$orange: $orange !default;
+
+$ink: #161B2E;
+$ink-deep: #0F1324;
+$ink-line: rgba(255, 255, 255, 0.08);
+
+$canvas: #F1F2F6;
+$surface: #FFFFFF;
+
+$text: #1A1F2E;
+$text-muted: #6B7280;
+$text-faint: #9CA3AF;
+
+$border: #E4E6EC;
+
+$amber: #D98A3D;
+$amber-deep: #B76B22;
+$amber-tint: #FBEEDF;
+
+$teal: #2F8F76;
+$teal-tint: #E4F3EE;
+
+$rose: #D1544A;
+$rose-tint: #FBEAE8;
+
+$radius: 10px;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark, "cyan": $cyan, "orange": $orange, "purple": $purple), $theme-colors);
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+// Body
+//
+// Settings for the  element.
+$main-body-bg: #fff !default;
+$body-bg: #f2f4f5;
+$body-color: #6a7a8c !default;
+$grid-gutter-width: 20px !default;
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-size-base: 0.875rem;
+$font-family-sans-serif: 'Rubik',
+sans-serif !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 700 !default;
+$h1-font-size: 36px !default;
+$h2-font-size: 30px !default;
+$h3-font-size: 24px !default;
+$h4-font-size: 18px !default;
+$h5-font-size: 16px !default;
+$h6-font-size: 14px !default;
+$headings-margin-bottom: (1rem / 2) !default;
+$headings-font-weight: 400 !default;
+$headings-color: inherit !default;
+// Breadcrumbs
+$breadcrumb-bg: $body-bg;
+$breadcrumb-margin-bottom: 1.5rem;
+// Cards
+$card-border-width: 0px !default;
+$card-border-color: transparent !default;
+$card-border-radius: 0px !default;
+// Dropdowns
+$dropdown-item-padding-x: 1rem !default;
+$dropdown-item-padding-y: .65rem !default;
+$dropdown-border-color: $gray-200;
+$dropdown-divider-bg: $gray-100;
+// Buttons
+$btn-secondary-border: $gray-300;
+// Progress bars
+$progress-bg: $gray-100;
+// Tables
+$table-bg-accent: $gray-100;
+$table-bg-hover: $gray-100;
+$table-hover-bg: $gray-100 !default;
+$table-cell-padding: 1rem !default;
+$table-bg-level: -10 !default;
+$table-bg-level2: 1 !default;
+$table-bg-level3: -5 !default;
+// Components
+$component-active-color: $white !default;
+$component-active-bg: $themecolor !default;
+$badge-pill-padding-x: .2em !default;
+$badge-pill-padding-y: 1em !default;
+// Forms
+$input-group-addon-bg: $gray-100;
+$input-border-color: $gray-200;
+$input-group-addon-border-color: $gray-200;
+$input-btn-focus-color: rgba(0, 0, 0, .25) !default;
+$input-focus-border-color: rgba(0, 0, 0, 0.25) !default;
+$custom-control-indicator-active-bg: rgba(0, 0, 0, 35%) !default;
+$custom-select-indicator: url(../../assets/images/custom-select.png) !default;
+$input-btn-focus-box-shadow: transparent !default;
+$custom-select-focus-box-shadow: transparent !default;
+$custom-select-indicator: str-replace(url(""),
+"%23") !default;
+$custom-select-border-width:        1px !default;
+//
+// Define common padding and border radius sizes and more.
+// Borders
+$border-width: 1px !default;
+$border-color: rgba(0, 0, 0, 0.1) !default;
+
+// Border Radius
+$border-radius-xs: 2px !default;
+$border-radius-sm: 4px !default;
+$border-radius: 6px !default;
+$border-radius-lg: 8px !default;
+$border-radius-xl: 12px !default;
+$border-radius-xxl: 16px !default;
+$border-radius-3xl: 20px !default;
+$border-radius-pill: 9999px !default;
+$border-radius-circle: 50% !default;
+
+// Progress bars
+$progress-height: 5px !default;
+//Tabs
+$nav-tabs-link-active-bg: $white !default;
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: ( xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1600px) !default;
+//Navbar
+$navbar-dark-color: rgba($white,
+.8) !default;
+$navbar-dark-hover-color: rgba($white,
+1) !default;
+
+
+
+// =========================================================
+// Common Table (list pages) — variables
+// Reuses existing theme tokens above; only adds what's missing.
+// Append this block to the end of _variable.scss
+// =========================================================
+
+// Layout tokens (reuse existing scale)
+$table-radius-card: $border-radius-xxl; // 16px
+$table-radius-input: $border-radius-lg; // 8px
+$table-radius-btn: $border-radius-lg; // 8px
+$table-radius-pill: $border-radius-pill; // 9999px
+
+// Surface / text tokens (reuse existing grays)
+$table-border-color: $gray-200;
+$table-row-border: $gray-200;
+$table-header-bg: $gray-100;
+$table-header-text: $gray-600;
+$table-text: $gray-900;
+$table-id-text: $gray-500;
+$table-muted: $gray-600;
+
+// Action colors (reuse existing theme colors)
+$table-primary: $primary;
+$table-primary-hover: darken($primary, 8%);
+
+$table-danger: $danger;
+$table-danger-bg: rgba($danger, 0.1);
+$table-danger-border: rgba($danger, 0.25);
+
+// Status / tag pill color map — used by .tbl-pill--{variant}
+$table-pill-colors: ( success: (bg: rgba($success, 0.12), text: $success, border: rgba($success, 0.25)), info: (bg: rgba($info, 0.12), text: $info, border: rgba($info, 0.25)), warning: (bg: rgba($warning, 0.15), text: darken($warning, 15%), border: rgba($warning, 0.3)), danger: (bg: rgba($danger, 0.1), text: $danger, border: rgba($danger, 0.25)), neutral: (bg: $gray-100, text: $gray-600, border: $gray-200) );
+ 

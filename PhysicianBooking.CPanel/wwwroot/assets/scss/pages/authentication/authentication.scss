@@ -1,0 +1,108 @@
+@import "../../variable";
+
+.auth-wrapper {
+    min-height: 100vh;
+    position: relative;
+
+    .auth-box {
+        background: $white;
+        border-radius: $border-radius-3xl;
+        padding: 60px 50px;
+        box-shadow: $shadow;
+        max-width: 420px;
+        width: 90%;
+        margin: 10% 0;
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 30px;
+            width: 100%;
+
+            .logo {
+                text-align: center;
+
+                .img {
+                    max-width: 80px;
+                }
+            }
+
+
+            .form {
+                .login-header {
+                    text-align: center;
+
+                    h2 {
+                        color: $black;
+                        font-weight: 500;
+                        font-size: 24px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        max-width: 300px;
+                        margin: auto;
+                    }
+                }
+
+                .login-icon {
+                    border-radius: 5px 0 0 5px;
+                }
+
+                .custom-control-input {
+                    border-radius: 0;
+                }
+
+                .icon-login{
+                    margin:0 6px; 
+                }
+            }
+        }
+
+        &.on-sidebar {
+            top: 0px;
+            right: 0px;
+            height: 100%;
+            margin: 0px;
+            position: absolute;
+        }
+    }
+
+    #recoverform {
+        display: none;
+    }
+
+    .auth-sidebar {
+        position: fixed;
+        height: 100%;
+        right: 0px;
+        overflow: auto;
+        margin: 0px;
+        top: 0px;
+    }
+}
+
+@media(max-width:1024px) {
+    .auth-wrapper {
+        background-size: cover !important;
+        background-position: 30% center !important;
+        min-height: 100vh;
+        min-width:100vw;
+
+        .auth-box {
+            padding: 50px 20px;
+        }
+
+        .auth-sidebar {
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+            margin: 40px 0 60px;
+        }
+
+        .demo-text {
+            margin-top: 30px;
+        }
+    }
+}

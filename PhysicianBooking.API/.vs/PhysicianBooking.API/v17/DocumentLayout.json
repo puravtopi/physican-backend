@@ -1,0 +1,283 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E77FCE5E-25C0-403F-A28D-5312A77B219D}|..\\PhysicianBooking.CPanel\\PhysicianBooking.CPanel.csproj|e:\\physician booking\\project\\physicianbooking.cpanel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208231F3-DCAE-4EAC-8824-2CE452763013}|..\\PhysicianBooking.Services\\PhysicianBooking.Services.csproj|e:\\physician booking\\project\\physicianbooking.services\\implementation\\placerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|e:\\physician booking\\project\\physicianbooking.api\\controllers\\physiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|solutionrelative:controllers\\physiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208231F3-DCAE-4EAC-8824-2CE452763013}|..\\PhysicianBooking.Services\\PhysicianBooking.Services.csproj|e:\\physician booking\\project\\physicianbooking.services\\interface\\iplacerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|e:\\physician booking\\project\\physicianbooking.api\\controllers\\googleplacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|solutionrelative:controllers\\googleplacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208231F3-DCAE-4EAC-8824-2CE452763013}|..\\PhysicianBooking.Services\\PhysicianBooking.Services.csproj|e:\\physician booking\\project\\physicianbooking.services\\interface\\igoogleplacesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208231F3-DCAE-4EAC-8824-2CE452763013}|..\\PhysicianBooking.Services\\PhysicianBooking.Services.csproj|e:\\physician booking\\project\\physicianbooking.services\\implementation\\googleplacesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|e:\\physician booking\\project\\physicianbooking.api\\controllers\\specialtiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|solutionrelative:controllers\\specialtiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\Downloads\\Google Place API Response (1).json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C03A5245-DE7C-4FEF-8466-28FDA3EFED39}|..\\PhysicianBooking.Domain\\PhysicianBooking.Domain.csproj|e:\\physician booking\\project\\physicianbooking.domain\\modal\\physicianmodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208231F3-DCAE-4EAC-8824-2CE452763013}|..\\PhysicianBooking.Services\\PhysicianBooking.Services.csproj|e:\\physician booking\\project\\physicianbooking.services\\implementation\\specialtiesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208231F3-DCAE-4EAC-8824-2CE452763013}|..\\PhysicianBooking.Services\\PhysicianBooking.Services.csproj|e:\\physician booking\\project\\physicianbooking.services\\interface\\ispecialtiesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|e:\\physician booking\\project\\physicianbooking.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{25CC52AD-E2A0-4205-BB79-EC7BE98BA3ED}|PhysicianBooking.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E77FCE5E-25C0-403F-A28D-5312A77B219D}|..\\PhysicianBooking.CPanel\\PhysicianBooking.CPanel.csproj|e:\\physician booking\\project\\physicianbooking.cpanel\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.CPanel\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.CPanel\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.CPanel\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.CPanel\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T11:46:35.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IGooglePlacesService.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Interface\\IGooglePlacesService.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.Services\\Interface\\IGooglePlacesService.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Interface\\IGooglePlacesService.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.Services\\Interface\\IGooglePlacesService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T10:47:19.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PhysicianModal.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.Domain\\Modal\\PhysicianModal.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.Domain\\Modal\\PhysicianModal.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.Domain\\Modal\\PhysicianModal.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.Domain\\Modal\\PhysicianModal.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowBMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T08:09:19.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Google Place API Response (1).json",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Google Place API Response (1).json",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Google Place API Response (1).json",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAKEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-12T07:50:15.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlaceRepository.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Implementation\\PlaceRepository.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.Services\\Implementation\\PlaceRepository.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Implementation\\PlaceRepository.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.Services\\Implementation\\PlaceRepository.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAIAzwJwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T06:02:15.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ISpecialtiesRepository.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Interface\\ISpecialtiesRepository.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.Services\\Interface\\ISpecialtiesRepository.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Interface\\ISpecialtiesRepository.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.Services\\Interface\\ISpecialtiesRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBAAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T05:18:55.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SpecialtiesRepository.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Implementation\\SpecialtiesRepository.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.Services\\Implementation\\SpecialtiesRepository.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Implementation\\SpecialtiesRepository.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.Services\\Implementation\\SpecialtiesRepository.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAiwI4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T14:09:25.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SpecialtiesController.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\Controllers\\SpecialtiesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SpecialtiesController.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\Controllers\\SpecialtiesController.cs",
+              "RelativeToolTip": "Controllers\\SpecialtiesController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAkwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T14:09:22.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IPlaceRepository.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Interface\\IPlaceRepository.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.Services\\Interface\\IPlaceRepository.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Interface\\IPlaceRepository.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.Services\\Interface\\IPlaceRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwA8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T05:16:32.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PhysioController.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\Controllers\\PhysioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PhysioController.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\Controllers\\PhysioController.cs",
+              "RelativeToolTip": "Controllers\\PhysioController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAtwDsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T05:11:58.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-02T17:00:12.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.CPanel\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.CPanel\\appsettings.json",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.CPanel\\appsettings.json",
+              "RelativeToolTip": "..\\PhysicianBooking.CPanel\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-02T16:59:59.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GooglePlacesService.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Implementation\\GooglePlacesService.cs",
+              "RelativeDocumentMoniker": "..\\PhysicianBooking.Services\\Implementation\\GooglePlacesService.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.Services\\Implementation\\GooglePlacesService.cs",
+              "RelativeToolTip": "..\\PhysicianBooking.Services\\Implementation\\GooglePlacesService.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwBEBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T05:53:23.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GooglePlaceController.cs",
+              "DocumentMoniker": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\Controllers\\GooglePlaceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GooglePlaceController.cs",
+              "ToolTip": "E:\\Physician Booking\\Project\\PhysicianBooking.API\\Controllers\\GooglePlaceController.cs",
+              "RelativeToolTip": "Controllers\\GooglePlaceController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T05:53:17.773Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 807,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

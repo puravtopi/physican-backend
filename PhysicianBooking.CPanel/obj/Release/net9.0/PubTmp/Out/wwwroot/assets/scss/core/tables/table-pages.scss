@@ -1,0 +1,340 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+
+
+/*******************
+Table Cell
+*******************/
+
+.table-box {
+    display: table;
+    width: 100%;
+}
+
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.table thead th,
+.table th {
+    font-weight: 500;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.lite-padding td {
+    padding: 5px;
+}
+
+.v-middle {
+    td,
+    th {
+        vertical-align: middle;
+    }
+}
+
+/*******************
+Table td vertical middle
+*******************/
+
+.vm.table td,
+.vm.table th {
+    vertical-align: middle;
+}
+
+.no-th-brd.table th {
+    border: 0px;
+}
+
+.table.no-border {
+    tbody {
+        td {
+            border: 0px;
+        }
+    }
+}
+
+
+
+/*******************
+Table-Jsgrid table
+******************/
+
+.jsgrid-pager-page a,
+.jsgrid-pager-current-page,
+.jsgrid-pager-nav-button a {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #67757c;
+    border: 1px solid #ddd;
+}
+
+.jsgrid-pager-page a:hover,
+.jsgrid-pager-nav-button a:hover {
+    background-color: $themecolor;
+    color: $white;
+}
+
+.jsgrid-pager-current-page {
+    background-color: $themecolor;
+    color: $white;
+}
+
+.jsgrid-pager-page,
+.jsgrid-pager-nav-button {
+    padding: 0;
+}
+
+.jsgrid-pager-page.jsgrid-pager-current-page {
+    padding: 0.5em 1em !important;
+}
+
+
+
+
+
+// ---------- Card wrapper ----------
+
+.tbl-page-row {
+    min-height: calc(100vh - 210px); 
+}
+
+.tbl-card {
+    border-radius: $table-radius-card;
+    border: 1px solid $table-border-color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+    }
+}
+
+.tbl-responsive {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 560px; 
+
+    thead th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+td.text-end {
+    display: flex;
+}
+
+// ---------- Toolbar (search + create/action button) ----------
+.tbl-toolbar {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.tbl-search {
+    position: relative;
+    max-width: 300px;
+    min-width:180px;
+    flex: 1;
+
+    .search-icon,
+    .bi-search {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9aa4b2;
+        font-size: 14px;
+    }
+
+    input {
+        border-radius: $table-radius-input;
+        border: 1px solid #e3e7ee;
+        padding-left: 36px;
+        height: 42px;
+        background: #fff;
+    }
+}
+
+.tbl-btn-primary {
+    border-radius: $table-radius-input;
+    padding: 10px 18px;
+    font-weight: 500;
+    background: $table-primary;
+    border-color: $table-primary;
+    color: #fff;
+
+    &:hover {
+        background: $table-primary-hover;
+        border-color: $table-primary-hover;
+        color: #fff;
+    }
+}
+
+// ---------- Table ----------
+.tbl {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+
+    thead th {
+        border: none;
+        background: $table-header-bg;
+        color: $table-header-text;
+        font-weight: 500;
+        font-size: 13px;
+        padding: 14px 16px;
+        white-space: nowrap;
+
+        &:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        &:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+    }
+
+    tbody {
+        td {
+            border: none;
+            border-bottom: 1px solid $table-row-border;
+            padding: 16px;
+            vertical-align: middle;
+            font-size: 14px;
+            color: $table-text;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+}
+
+.tbl-id {
+    color: $table-id-text;
+    font-size: 13.5px;
+}
+
+.tbl-cell-ellipsis {
+    max-width: 420px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// ---------- Status / tag pill ----------
+.tbl-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius:5px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+}
+
+@each $variant, $colors in $table-pill-colors {
+    .tbl-pill--#{$variant} {
+        background: map-get($colors, bg);
+        color: map-get($colors, text);
+        border-color: map-get($colors, border);
+    }
+}
+
+// ---------- Row action buttons ----------
+.tbl-action-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: $table-radius-btn;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e6e9ef;
+    background: #fff;
+    color: $table-muted;
+    margin-right: 6px;
+    transition: all .15s ease;
+
+    &:hover {
+        background: #f5f6f9;
+    }
+
+    &.tbl-action-btn--danger:hover {
+        background: $table-danger-bg;
+        color: $table-danger;
+        border-color: $table-danger-border;
+    }
+}
+
+// ---------- Footer / pagination ----------
+.tbl-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+    flex-shrink: 0;
+
+    .tbl-results-text {
+        color: $table-id-text;
+        font-size: 13.5px;
+    }
+}
+
+.tbl-page-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: $table-radius-btn;
+    border: 1px solid #e6e9ef;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #4b5563;
+    font-size: 13.5px;
+
+    &.active {
+        background: $table-primary;
+        border-color: $table-primary;
+        color: #fff;
+        font-weight: 600;
+    }
+}
+
+
+@media(max-width:384px) {
+    .tbl-toolbar{
+        .tbl-btn-primary{
+            width:100%;
+        }
+    }
+   
+}

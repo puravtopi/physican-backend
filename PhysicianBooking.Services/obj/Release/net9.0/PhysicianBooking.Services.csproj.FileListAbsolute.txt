@@ -1,0 +1,15 @@
+E:\Physician Booking\Project\PhysicianBooking.Services\bin\Release\net9.0\PhysicianBooking.Services.deps.json
+E:\Physician Booking\Project\PhysicianBooking.Services\bin\Release\net9.0\PhysicianBooking.Services.dll
+E:\Physician Booking\Project\PhysicianBooking.Services\bin\Release\net9.0\PhysicianBooking.Services.pdb
+E:\Physician Booking\Project\PhysicianBooking.Services\bin\Release\net9.0\PhysicianBooking.Domain.dll
+E:\Physician Booking\Project\PhysicianBooking.Services\bin\Release\net9.0\PhysicianBooking.Domain.pdb
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\PhysicianBooking.Services.csproj.AssemblyReference.cache
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\PhysicianBooking.Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\PhysicianBooking.Services.AssemblyInfoInputs.cache
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\PhysicianBooking.Services.AssemblyInfo.cs
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\PhysicianBooking.Services.csproj.CoreCompileInputs.cache
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\Physicia.9B42F93F.Up2Date
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\PhysicianBooking.Services.dll
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\refint\PhysicianBooking.Services.dll
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\PhysicianBooking.Services.pdb
+E:\Physician Booking\Project\PhysicianBooking.Services\obj\Release\net9.0\ref\PhysicianBooking.Services.dll
