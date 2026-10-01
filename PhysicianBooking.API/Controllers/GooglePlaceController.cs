@@ -9,7 +9,6 @@ namespace PhysicianBooking.API.Controllers
     public class GooglePlaceController : ControllerBase
     {
         private readonly GooglePlacesService _service;
-
         public GooglePlaceController(GooglePlacesService service) => _service = service;
 
         [HttpGet("search")]
