@@ -9,10 +9,12 @@ namespace PhysicianBooking.API.Controllers
     public class InquiryController : Controller
     {
         private readonly IInquiryRepository _inquiryRepository;
+        private readonly IEmailService _emailService;
 
-        public InquiryController(IInquiryRepository inquiryRepository)
+        public InquiryController(IInquiryRepository inquiryRepository, IEmailService emailService)
         {
             _inquiryRepository = inquiryRepository;
+            _emailService = emailService;
         }
 
 
@@ -20,6 +22,7 @@ namespace PhysicianBooking.API.Controllers
         public async Task<IActionResult> AddInquiry([FromBody] InquiryModal modal)
         {
             await _inquiryRepository.SaveInquiry(modal);
+            var success = await _emailService.SendEmailAsync(modal.Name, "purav.topi@gmail.com", modal.Note);
             return Ok(1);
         }
     }
