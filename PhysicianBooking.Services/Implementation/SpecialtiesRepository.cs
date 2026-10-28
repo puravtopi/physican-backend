@@ -68,17 +68,21 @@ namespace PhysicianBooking.Services.Implementation
             };
         }
 
-        public async Task<PagedResult<ZipModal>> GetZips(string searchText, int pageNumber, int pageSize)
+        public async Task<PagedResult<ZipModal>> GetZips(string searchText, int pageNumber, int pageSize,string searchCity)
         {
             // Define if we should skip pagination
             bool skipPagination = pageSize <= 0;
 
             int offset = skipPagination ? 0 : (pageNumber - 1) * pageSize;
 
-            string whereClause = string.Empty;
+            string whereClause = " Where 1=1 ";
+            //if (!string.IsNullOrWhiteSpace(searchText))
+            //{
+            //    whereClause = " and name ILIKE @search";
+            //}
             if (!string.IsNullOrWhiteSpace(searchText))
             {
-                whereClause = "WHERE name ILIKE @search";
+                whereClause = whereClause+" and city=@city";
             }
 
             string countSql = $@"
@@ -98,7 +102,8 @@ namespace PhysicianBooking.Services.Implementation
 
             var parameters = new
             {
-                search = $"%{searchText}%",
+               // search = $"%{searchText}%",
+                city= $"{searchText}",
                 pageSize,
                 offset
             };
@@ -132,7 +137,7 @@ namespace PhysicianBooking.Services.Implementation
             // Count distinct cities
             string countSql = $@"
         SELECT COUNT(DISTINCT city) 
-        FROM tbl_places 
+        FROM tbl_zipcodes 
         {whereClause};";
 
             // Conditionally add the LIMIT and OFFSET clauses
@@ -141,7 +146,7 @@ namespace PhysicianBooking.Services.Implementation
             // Select distinct cities ordered alphabetically
             string dataSql = $@"
         SELECT DISTINCT city
-        FROM tbl_places
+        FROM tbl_zipcodes
         {whereClause}
         ORDER BY city ASC
         {paginationClause};";
@@ -172,25 +177,25 @@ namespace PhysicianBooking.Services.Implementation
             int offset = skipPagination ? 0 : (pageNumber - 1) * pageSize;
 
             // Filter out null/blank values and optionally filter by search text
-            string whereClause = "WHERE state IS NOT NULL AND TRIM(state) <> ''";
+            string whereClause = "WHERE state IS NOT NULL AND TRIM(city) <> ''";
             if (!string.IsNullOrWhiteSpace(searchText))
             {
                 whereClause += " AND state ILIKE @search";
             }
 
-            // Count distinct states
+            // Count distinct cities
             string countSql = $@"
         SELECT COUNT(DISTINCT state) 
-        FROM tbl_places 
+        FROM tbl_zipcodes 
         {whereClause};";
 
             // Conditionally add the LIMIT and OFFSET clauses
             string paginationClause = skipPagination ? "" : "LIMIT @pageSize OFFSET @offset";
 
-            // Select distinct states ordered alphabetically
+            // Select distinct cities ordered alphabetically
             string dataSql = $@"
         SELECT DISTINCT state
-        FROM tbl_places
+        FROM tbl_zipcodes
         {whereClause}
         ORDER BY state ASC
         {paginationClause};";

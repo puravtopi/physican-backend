@@ -12,7 +12,7 @@ namespace PhysicianBooking.Services.Interface
     {
         Task<PagedResult<SpecialtiesModal>> GetSpecialtiesAsync(string searchText = "", int pageNumber = 1, int pageSize = 10);
 
-        Task<PagedResult<ZipModal>> GetZips(string searchText, int pageNumber, int pageSize);
+        Task<PagedResult<ZipModal>> GetZips(string searchText, int pageNumber, int pageSize,string city="");
         Task<PagedResult<string>> GetCities(string searchText, int pageNumber, int pageSize);
         Task<PagedResult<string>> GetStates(string searchText, int pageNumber, int pageSize);
     }

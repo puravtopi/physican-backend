@@ -34,7 +34,7 @@ builder.Services.AddScoped<IPlaceRepository, PlaceRepository>();
 builder.Services.AddScoped<ISpecialtiesRepository, SpecialtiesRepository>();
 builder.Services.AddScoped<ILeadsRepository, LeadsRepository>();
 builder.Services.AddScoped<IInquiryRepository, InquiryRepository>();
-
+builder.Services.AddHttpClient<IEmailService, EmailJsService>();
 // Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

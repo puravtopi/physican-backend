@@ -11,6 +11,9 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Numerics;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PhysicianBooking.Services.Implementation
@@ -112,22 +115,21 @@ namespace PhysicianBooking.Services.Implementation
 
         public async Task<GooglePlacesResponse> SearchAndSaveBusinesses(string category, string zipCode)
         {
+
+
             var apiKey = _config["GoogleApi:ApiKey"];
             if (string.IsNullOrEmpty(apiKey))
                 throw new InvalidOperationException("Google API Key is not configured.");
-
             var url = "https://places.googleapis.com/v1/places:searchText";
             var allBusinessResults = new List<Domain.Place>();
             string? currentPageToken = null;
-
             // Field mask explicitly scoped
             //var fieldMask = "places.id,places.displayName,places.formattedAddress," +
             //                "places.reviews,places.nationalPhoneNumber,places.websiteUri," +
             //                "places.rating,places.userRatingCount,nextPageToken";
             var fieldMask = "places.id,places.displayName,places.formattedAddress,places.addressComponents," +
-                         "places.reviews,places.nationalPhoneNumber,places.websiteUri," +
-                         "places.rating,places.userRatingCount,nextPageToken";
-
+            "places.reviews,places.nationalPhoneNumber,places.websiteUri," +
+            "places.rating,places.userRatingCount,nextPageToken";
             do
             {
                 var requestBody = new
@@ -173,7 +175,6 @@ namespace PhysicianBooking.Services.Implementation
                 {
                     await Task.Delay(1500);
                 }
-
             } while (!string.IsNullOrEmpty(currentPageToken));
 
             var finalResult = new GooglePlacesResponse
@@ -200,22 +201,18 @@ namespace PhysicianBooking.Services.Implementation
         public async Task<bool> GetWeekdayDescriptionsAsync()
         {
 
-            string placeId="";
-            Int64 Id=0;
+            string placeId = "";
+            Int64 Id = 0;
 
 
-            string dataSql = $@"
-        SELECT
-            Id,
-            place_id as PlaceId
-            FROM tbl_places
-       
-        ;";
+            string dataSql = @"
+SELECT
+    id AS Id,
+    place_id AS PlaceId
+FROM tbl_places
+WHERE id > @Id;";
 
-
-
-            var data = await _db.QueryAsync<PhysicianModal>(
-                dataSql);
+            var data = await _db.QueryAsync<PhysicianModal>(dataSql, new { Id = 1881 });
 
             if (data != null)
             {
@@ -264,12 +261,12 @@ namespace PhysicianBooking.Services.Implementation
                     {
                         // Save to database
                         this.SaveWorkingHours(place.RegularOpeningHours, Id);
-                       
+
                     }
                 }
                 return true;
             }
-            
+
             return false;
         }
 
